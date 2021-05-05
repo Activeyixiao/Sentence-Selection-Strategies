@@ -1,3 +1,6 @@
+
+Sampling-sentences-for-better-word-embeddings
+
 Current word embedding learning technology mainly relay on randomly sampling sentences from corpus for each word, it is suspect that if these random sentences can really capture semantic properties of word given that many sentence that mentioning a word doesn't give any clue of its commonsense property.
 
 This project aims at selecting better sentences for learning word embedding that better at capturing semantic properties.
