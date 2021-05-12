@@ -1,13 +1,13 @@
 
-Sampling-sentences-for-better-word-embeddings
+# Sampling-sentences-for-better-word-embeddings
 
-Motivation:
+## Motivation:
 
 Current word embedding learning technology commonly find random sentences to learn a vector for each word, it is suspect that if these random sentences can really capture semantic properties of a word given that many sentences that mentioning that word may not give any clue of its commonsense properties. (e.g. the banana is yellow and sweet). Even if the coverage of the random selection is large enough to include all useful sentences, using average upon them inevitably loose some sensitive information, not mentioning the inefficiency of this strategy.
 
 If we could find only a few representative sentences for each words and learn a embedding without applying average upon them, the resulted vectors might be more sensitive to some downstream NLP tasks that focus on semantic properties beside that these vectors can be easy to learn.
 
-Method:
+## Method:
 
 Motivied by above idea, we proposed that the following strategies could help us find less and better sentences than random sampling.
 
@@ -23,7 +23,7 @@ The baselines to compete will be the following options:
   B1.vectors learned from several random selected sentences after averaging them (to compare with A1 or A2, the number of sample sentences is also same)
   B2.vectors learned from 500 random sentences after average them (to confirm if less and better sample sentences after CNN filter are better than more and messy sample sentence after averaging)
   
-Experiment and evaluation:
+## Experiment and evaluation:
   1.word-sensen-classification (BD,SS,MC,CSLB)
   2.relation classificaton (ConceptNet, BLESS, Hperlex)
 
