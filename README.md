@@ -17,7 +17,7 @@ Motivied by above idea, we proposed that the following strategies could help us 
   
 After obtaining those sentence for each word, we could use pre-trained language model (BERT or RoBERTa) to extract its hidden layers representation for that word in each sentence. Then we sum these vectors up and divided by the number of it, taking plain-average of these vectors as the final representation of that word. The baselines that we want to comare with are the vectors learned from a randomly selected sentence.
 
-## Doing it step by step:
+## Doing step by step:
 
 ### Requirements
 - Python3
