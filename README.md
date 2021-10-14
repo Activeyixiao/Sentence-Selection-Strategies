@@ -1,29 +1,37 @@
 
 # Sampling-sentences-for-better-word-embeddings
 
-## Motivation:
+## Introduction: better word-vectors require better sentences
 
-Current word embedding learning technology commonly find random sentences to learn a vector for each word, it is suspect that if these random sentences can really capture semantic properties of a word given that many sentences that mentioning that word may not give any clue of its commonsense properties. (e.g. the banana is yellow and sweet). Even if the coverage of the random selection is large enough to include all useful sentences, using average upon them inevitably loose some sensitive information, not mentioning the inefficiency of this strategy.
+Current word embedding learning technology commonly find random sentences to learn a representation for a word, it is not guaranteed that random selected sentences can capture semantic properties of a word given that a sentence in which a word in may not give any clue of its commonsense properties. (e.g. the banana is yellow and sweet). Even if increasing coverage of the sentence selection can cover most useful sentences, applying average upon them inevitably loose some relevant information, not mentioning its inefficiency. If we could find only a few representative sentences for each words and learn a representation, this representation might be more sensitive and effective to some downstream NLP tasks that requires capturing semantic properties.
 
-If we could find only a few representative sentences for each words and learn a embedding without applying average upon them, the resulted vectors might be more sensitive to some downstream NLP tasks that focus on semantic properties beside that these vectors can be easy to learn.
-
-## Method:
+## Method: how to get better sentences:
 
 Motivied by above idea, we proposed that the following strategies could help us find less and better sentences than random sampling.
 
-  - A0.Using wiki-defintion sentence for each word (random sentence will be used if some word don't have definition sentence)
-  - A1.Using wikipedia structure (use only the fixed number of sentences from first section, or first papragraph of home page of each word)
-  - A2.Using PPMI value to extract most revevant word pair and use sentences that mentioning both words as samples.
-  - A3.coming soon...
+  - A.Using wikitionary dataset and finding definition sentence for each word
+  - B.Using wikipedia structure (sentences from first section, or first papragraph from the wiki-homepage of each word)
+  - C.Using PPMI value to extract most revevant word pair and seletct sentences that mentioning both words.
+  - D.Using GenericsKB datatset and selecting relevant sentences for each word 
   
-After obtaining those sentence for each word, we could use pre-trained language model (BERT or RoBERTa) to extract its final layer representation for that word per sentence. The result will be that each word gain several vectors corresponding to its sample sentences. Rathan than taking plain-average or weighted-average of these vectors, we propose to directly take them as input to downstram NLP tasks and use CNN model (kernal size = 1) to do feature extraction. The advantage of using CNN model is that it can find the most suitable vector after max-pooling and thus make best use of that vector for evaluaton tasks.  
+After obtaining those sentence for each word, we could use pre-trained language model (BERT or RoBERTa) to extract its hidden layers representation for that word in each sentence. Then we sum these vectors up and divided by the number of it, taking plain-average of these vectors as the final representation of that word. The baselines that we want to comare with are the vectors learned from a randomly selected sentence.
 
-The baselines to compete will be the following options:
-  - B0.vectors learned from a random selected sentence (to compare with the A0).
-  - B1.vectors learned from several random selected sentences after averaging them (to compare with A1 or A2, the number of sample sentences is also same)
-  - B2.vectors learned from 500 random sentences after average them (to confirm if less and better sample sentences after CNN filter are better than more and messy sample sentence after averaging)
-  
-## Experiment and evaluation:
-  - 1.word-sensen-classification (BD,SS,MC,CSLB)
-  - 2.relation classificaton (ConceptNet, BLESS, Hperlex)
+## Doing it step by step:
+
+### Requirements
+- Python3
+- Numpy
+- Torch
+- pickle
+- NLTK
+
+### Step 1: Preparing a vocabulary list
+
+- The code requires a text file containing the vocabulary, i.e. the set of words for which vector representations need to be obtained. This vocabulary is encoded as a plain text file, with one word per line.
+
+- The vocabulary corresponding to the experiments from our paper can be downloaded here: https://cf-my.sharepoint.com/:t:/g/personal/wangy306_cardiff_ac_uk/EXg5FWbRhLVDlXrPAd0vwCUBNkMTiJGiSRTFQtaYtOycaA?e=ev3epd
+
+- In this case, the vocabulary consists of all words from the four evaluation dataset: [the extended McRae feature norms](https://github.com/mbforbes/physical-commonsense), [CSLB](https://cslb.psychol.cam.ac.uk/propnorms#:~:text=The%20Centre%20for%20Speech%2C%20Language,feature%20representations%20of%20conceptual%20knowledge.), [WordNet_Supersenses](https://wordnet.princeton.edu/), and [BabelNet domains](http://lcl.uniroma1.it/babeldomains/#:~:text=BabelDomains%20is%20a%20unified%20resource,the%20Wikipedia%20featured%20articles%20page.)
+
+### Step 2: Selecting sentences for each word
 
