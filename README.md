@@ -73,4 +73,7 @@ After obtaining those sentence for each word, we could use pre-trained language 
   `python3 ./get_vector/run_unmask.py -i <json file containing words-sentences-mapping> -s <max_seq_length> -b <batch_size> -o <out_dir: mask/unmask + LM_model_version+ json_file> -v <LM_version> -g <use GPU or not>`
   
 ### Step 3: Vector evaluation
-- We evaluate the generated vectors on four dataset: [MC](https://github.com/mbforbes/physical-commonsense),[CSLB](https://cslb.psychol.cam.ac.uk/propnorms#:~:text=The%20Centre%20for%20Speech%2C%20Language,feature%20representations%20of%20conceptual%20knowledge.),[SS](https://wordnet.princeton.edu/),[BD](http://lcl.uniroma1.it/babeldomains/#:~:text=BabelDomains%20is%20a%20unified%20resource,the%20Wikipedia%20featured%20articles%20page)
+- We evaluate our generated vectors on four dataset: [MC](https://github.com/mbforbes/physical-commonsense),[CSLB](https://cslb.psychol.cam.ac.uk/propnorms#:~:text=The%20Centre%20for%20Speech%2C%20Language,feature%20representations%20of%20conceptual%20knowledge.),[SS](https://wordnet.princeton.edu/),[BD](http://lcl.uniroma1.it/babeldomains/#:~:text=BabelDomains%20is%20a%20unified%20resource,the%20Wikipedia%20featured%20articles%20page)
+- run evaluation experiment:
+  `python3 ./evaluation/run_network.py -dataset <MC/SS/CSLB/BD> -embed_path <location of generated vector pickle file> -vector_name <bert_base,bert_large,roberta_base,roberta_large> -vector_type <definition/wiki_introduction/wiki_homepage/random/length_n/generics/topics/PMI> -in_features <768/1024> -batch_size <n>
+`
