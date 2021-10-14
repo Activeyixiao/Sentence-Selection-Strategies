@@ -12,7 +12,8 @@ Motivied by above idea, we proposed that the following strategies could help us 
   - A.Using wikitionary dataset and finding definition sentence for each word
   - B.Using wikipedia structure (sentences from first section, or first papragraph from the wiki-homepage of each word)
   - C.Using PPMI value to extract most revevant word pair and seletct sentences that mentioning both words.
-  - D.Using GenericsKB datatset and selecting relevant sentences for each word 
+  - D.Using topic model to select sentences
+  - E.Using GenericsKB datatset and selecting relevant sentences for each word 
   
 After obtaining those sentence for each word, we could use pre-trained language model (BERT or RoBERTa) to extract its hidden layers representation for that word in each sentence. Then we sum these vectors up and divided by the number of it, taking plain-average of these vectors as the final representation of that word. The baselines that we want to comare with are the vectors learned from a randomly selected sentence.
 
@@ -35,6 +36,13 @@ After obtaining those sentence for each word, we could use pre-trained language 
 
 ### Step 2: Selecting sentences
 
+#### Required documents:
+- wikipedia-document
+- wikitionary-dataset
+- genericsKG-dataset
+- word-topic-document
+
+#### obtaining sentences
 - selecting random sentences: 
   - `python3 random_sentence.py`
 - selecting sentences from wikitionary
@@ -47,4 +55,5 @@ After obtaining those sentence for each word, we could use pre-trained language 
   - `python3 generics_sentence.py`
 - selecting sentences using PMI score of words co-occurrence
   - `python3 PMI_sentence.py`
+- selecting sentence using topic model (LDA)
 
