@@ -62,3 +62,8 @@ After obtaining those sentence for each word, we could use pre-trained language 
   - `python3 PMI_sentence.py`
 - selecting sentence using topic model (LDA)
 
+### Step 3: Getting vectors
+- getting masked vectors:
+  `python3 ./get_vector/run_mask.py -i <json file containing words-sentences-mapping> -s <max_seq_length> -b <batch_size> -o <out_dir: mask/unmask + LM_model_version+ json_file> -v <LM_version> -g <use GPU or not>`
+- getting unmasked vectors:
+  `python3 ./get_vector/run_unmask.py -i <json file containing words-sentences-mapping> -s <max_seq_length> -b <batch_size> -o <out_dir: mask/unmask + LM_model_version+ json_file> -v <LM_version> -g <use GPU or not>`
