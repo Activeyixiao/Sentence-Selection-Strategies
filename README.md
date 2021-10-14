@@ -33,5 +33,18 @@ After obtaining those sentence for each word, we could use pre-trained language 
 
 - In this case, the vocabulary consists of all words from the four evaluation dataset: [the extended McRae feature norms](https://github.com/mbforbes/physical-commonsense), [CSLB](https://cslb.psychol.cam.ac.uk/propnorms#:~:text=The%20Centre%20for%20Speech%2C%20Language,feature%20representations%20of%20conceptual%20knowledge.), [WordNet_Supersenses](https://wordnet.princeton.edu/), and [BabelNet domains](http://lcl.uniroma1.it/babeldomains/#:~:text=BabelDomains%20is%20a%20unified%20resource,the%20Wikipedia%20featured%20articles%20page.)
 
-### Step 2: Selecting sentences for each word
+### Step 2: Selecting sentences
+
+- selecting random sentences: 
+  - `python3 random_sentence.py`
+- selecting sentences from wikitionary
+  - `python3 wikitionary_sentence.py`
+- selecting sentences from wiki-homepage
+  - `python3 homepage_sentence.py`
+- selecting sentences from introduction part of wikipedia
+  - `python3 introduction_sentence.py`
+- selecting sentences from GenericsKG
+  - `python3 generics_sentence.py`
+- selecting sentences using PMI score of words co-occurrence
+  - `python3 PMI_sentence.py`
 
