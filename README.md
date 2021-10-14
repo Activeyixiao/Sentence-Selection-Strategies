@@ -55,7 +55,7 @@ After obtaining those sentence for each word, we could use pre-trained language 
 - selecting sentences from GenericsKG
   - `python3 ./sentence_extraction/get_sentences(def_generics).py -w all_words.txt -c GenericsKB.tsv -s generics`
 - selecting sentences from wiki-homepage
-  - `python3 ./sentence_extraction/get_sentences(wiki_homepage).py`-w all_words.txt -c wiki_page_structure
+  - `python3 ./sentence_extraction/get_sentences(wiki_homepage).py -w all_words.txt -c wiki_page_structure`
 
 
 - selecting sentences using PMI score of words co-occurrence
