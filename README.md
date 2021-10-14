@@ -45,16 +45,18 @@ After obtaining those sentence for each word, we could use pre-trained language 
 - word-topic-document
 
 #### obtaining sentences
-- selecting random sentences: 
-  - `python3 get_mention_sentence.py -w all_words.txt -c wiki_page_file.txt -b build_folder`
+- selecting random sentences from wikipedia: 
+  - `python3 ./sentence_extraction/get_sentences(random).py -w all_words.txt -c wiki_page_file.txt -b build_folder`
+- selecting sentences from introduction part of wikipedia
+  - `python3 ./sentence_extraction/get_sentences(random).py -w all_words.txt -c wiki_intro.txt -b build_folder`
 - selecting sentences from wikitionary
-  - `python3 wikitionary_sentence.py`
+  - `python3 ./sentence_extraction/get_sentences(def_generics).py -w all_words.txt -c all_wiktionary_onlynouns_most-freq-sense.csv -s wikitionary`
+- selecting sentences from GenericsKG
+  - `python3 ./sentence_extraction/get_sentences(def_generics).py -w all_words.txt -c GenericsKB.tsv -s generics`
 - selecting sentences from wiki-homepage
   - `python3 homepage_sentence.py`
-- selecting sentences from introduction part of wikipedia
-  - `python3 get_mention_sentence.py -w all_words.txt -c wiki_intro.txt -b build_folder`
-- selecting sentences from GenericsKG
-  - `python3 generics_sentence.py`
+
+
 - selecting sentences using PMI score of words co-occurrence
   - `python3 PMI_sentence.py`
 - selecting sentence using topic model (LDA)
