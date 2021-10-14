@@ -38,8 +38,8 @@ After obtaining those sentence for each word, we could use pre-trained language 
 
 #### Required documents:
 - vocabulary list
-- (https://doi.org/10.5281/zenodo.5570579)[wikipedia-file]
-- (https://doi.org/10.5281/zenodo.5570561),[wikipedia-introduction-file]
+- [wikipedia-file](https://doi.org/10.5281/zenodo.5570579)
+- [wikipedia-introduction-file](https://doi.org/10.5281/zenodo.5570561)
 - wikitionary-dataset
 - genericsKG-dataset
 - word-topic-document
