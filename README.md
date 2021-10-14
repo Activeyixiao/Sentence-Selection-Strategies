@@ -37,7 +37,7 @@ After obtaining those sentence for each word, we could use pre-trained language 
 ### Step 2: Selecting sentences
 
 #### Required documents:
-- vocabulary list
+- vocabulary list (in this repo:'all_words.txt')
 - [wikipedia-file](https://doi.org/10.5281/zenodo.5570579)
 - [wikipedia-introduction-file](https://doi.org/10.5281/zenodo.5570561)
 - wikitionary-dataset
