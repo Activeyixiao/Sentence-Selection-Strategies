@@ -63,7 +63,13 @@ After obtaining those sentence for each word, we could use pre-trained language 
 - selecting sentence using topic model (LDA)
 
 ### Step 3: Getting vectors
+
+#### Required documents:
+- json files (dictionary that map word to its 20 sentences) as output from the above step.
+#### get vectors from langugae models (BERT, roBERTa)
 - getting masked vectors:
   `python3 ./get_vector/run_mask.py -i <json file containing words-sentences-mapping> -s <max_seq_length> -b <batch_size> -o <out_dir: mask/unmask + LM_model_version+ json_file> -v <LM_version> -g <use GPU or not>`
 - getting unmasked vectors:
   `python3 ./get_vector/run_unmask.py -i <json file containing words-sentences-mapping> -s <max_seq_length> -b <batch_size> -o <out_dir: mask/unmask + LM_model_version+ json_file> -v <LM_version> -g <use GPU or not>`
+  
+### Step 3: Vector evaluation
