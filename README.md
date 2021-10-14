@@ -47,9 +47,9 @@ After obtaining those sentence for each word, we could use pre-trained language 
 
 #### obtaining sentences
 - selecting random sentences from wikipedia: 
-  - `python3 ./sentence_extraction/get_sentences(random).py -w all_words.txt -c wiki_page_file.txt -t wiki_split -b ./get_vector/sentences_collection`
+  - `python3 ./sentence_extraction/get_sentences(random).py -w all_words.txt -c wiki_page_file.txt -t wiki_split -b get_vector/sentences_collection -l true`
 - selecting sentences from introduction part of wikipedia
-  - `python3 ./sentence_extraction/get_sentences(random).py -w all_words.txt -c wiki_intro.txt -t wiki_split -b ./get_vector/sentences_collection`
+  - `python3 ./sentence_extraction/get_sentences(random).py -w all_words.txt -c wiki_intro.txt -t wiki_split -b get_vector/sentences_collection -l false`
 - selecting sentences from wikitionary
   - `python3 ./sentence_extraction/get_sentences(def_generics).py -w all_words.txt -c all_wiktionary_onlynouns_most-freq-sense.csv -s wikitionary -b ./get_vector/sentences_collection`
 - selecting sentences from GenericsKG
