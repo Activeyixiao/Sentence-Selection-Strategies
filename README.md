@@ -56,11 +56,10 @@ After obtaining those sentence for each word, we could use pre-trained language 
   - `python3 ./sentence_extraction/get_sentences(def_generics).py -w all_words.txt -c GenericsKB.tsv -s generics -b ./get_vector/sentences_collection`
 - selecting sentences from wiki-homepage
   - `python3 ./sentence_extraction/get_sentences(wiki_homepage).py -w all_words.txt -c wiki_page_structure -b ./get_vector/sentences_collection`
-
-
+- selecting sentence using topic model (LDA)
+  - `python3 ./sentence_extraction/get_sentences(topics).py -w all_words.txt -c word_topic(25)_sentences -b ./get_vector/sentences_collection` 
 - selecting sentences using PMI score of words co-occurrence
   - `python3 PMI_sentence.py`
-- selecting sentence using topic model (LDA)
 
 ### Getting vectors
 
