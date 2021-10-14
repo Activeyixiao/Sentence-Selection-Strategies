@@ -37,11 +37,11 @@ After obtaining those sentence for each word, we could use pre-trained language 
 ### Selecting sentences
 
 ##### Required documents:
-- [vocabulary list](https://cf-my.sharepoint.com/:t:/g/personal/wangy306_cardiff_ac_uk/EXg5FWbRhLVDlXrPAd0vwCUBNkMTiJGiSRTFQtaYtOycaA?e=ev3epd)
+- vocabulary list: "all_words.txt"
 - [wikipedia-file](https://doi.org/10.5281/zenodo.5570579)
 - [wikipedia-introduction-file](https://doi.org/10.5281/zenodo.5570561)
 - [wikipedia_homepages](https://doi.org/10.5281/zenodo.5570854)
-- wikitionary-dataset: in this repo ("data/all_wiktionary_onlynouns_most-freq-sense.csv")
+- wikitionary-dataset: "data/all_wiktionary_onlynouns_most-freq-sense.csv"
 - [genericsKG-dataset](https://allenai.org/data/genericskb)
 - [word_topic(25)_sentences](https://doi.org/10.5281/zenodo.5570983)
 
