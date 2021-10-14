@@ -37,20 +37,22 @@ After obtaining those sentence for each word, we could use pre-trained language 
 ### Step 2: Selecting sentences
 
 #### Required documents:
-- wikipedia-document
+- vocabulary list
+- (https://doi.org/10.5281/zenodo.5570579)[wikipedia-file]
+- (https://doi.org/10.5281/zenodo.5570561),[wikipedia-introduction-file]
 - wikitionary-dataset
 - genericsKG-dataset
 - word-topic-document
 
 #### obtaining sentences
 - selecting random sentences: 
-  - `python3 random_sentence.py`
+  - `python3 get_mention_sentence.py -w all_words.txt -c wiki_page_file.txt -b build_folder`
 - selecting sentences from wikitionary
   - `python3 wikitionary_sentence.py`
 - selecting sentences from wiki-homepage
   - `python3 homepage_sentence.py`
 - selecting sentences from introduction part of wikipedia
-  - `python3 introduction_sentence.py`
+  - `python3 get_mention_sentence.py -w all_words.txt -c wiki_intro.txt -b build_folder`
 - selecting sentences from GenericsKG
   - `python3 generics_sentence.py`
 - selecting sentences using PMI score of words co-occurrence
