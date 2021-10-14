@@ -7,7 +7,7 @@
 
 ## Method: how to get better sentences:
 
-Motivied by above idea, we proposed that the following strategies could help us find less and better sentences than random sampling.
+Motivied by the above idea, we proposed that the following strategies could help us finding better sentences than random selecting.
 
   - A.Using wikitionary dataset and finding definition sentence for each word
   - B.Using wikipedia structure (sentences from first section, or first papragraph from the wiki-homepage of each word)
