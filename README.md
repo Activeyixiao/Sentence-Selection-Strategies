@@ -19,7 +19,7 @@ After obtaining those sentence for each word, we could use pre-trained language 
 
 ## Doing step by step:
 
-### Requirements
+#### Requirements
 - Python3
 - Numpy
 - Torch
@@ -36,7 +36,7 @@ After obtaining those sentence for each word, we could use pre-trained language 
 
 ### Selecting sentences
 
-#### Required documents:
+##### Required documents:
 - [vocabulary list](https://cf-my.sharepoint.com/:t:/g/personal/wangy306_cardiff_ac_uk/EXg5FWbRhLVDlXrPAd0vwCUBNkMTiJGiSRTFQtaYtOycaA?e=ev3epd)
 - [wikipedia-file](https://doi.org/10.5281/zenodo.5570579)
 - [wikipedia-introduction-file](https://doi.org/10.5281/zenodo.5570561)
@@ -45,7 +45,7 @@ After obtaining those sentence for each word, we could use pre-trained language 
 - [genericsKG-dataset](https://allenai.org/data/genericskb)
 - word-topic-document
 
-#### obtaining sentences
+##### obtaining sentences
 - selecting random sentences from wikipedia: 
   - `python3 ./sentence_extraction/get_sentences(random).py -w all_words.txt -c wiki_page_file.txt -t wiki_split -b get_vector/sentences_collection -l true`
 - selecting sentences from introduction part of wikipedia
@@ -64,9 +64,9 @@ After obtaining those sentence for each word, we could use pre-trained language 
 
 ### Getting vectors
 
-#### Required documents:
+##### Required documents:
 - json files (dictionary that map word to its 20 sentences) as output from the above step.
-#### Word vectors as hidden layers of langugae models (BERT, roBERTa)
+##### Word vectors as hidden layers of langugae models (BERT, roBERTa)
 - getting masked vectors:
   `python3 ./get_vector/run_mask.py -i <json file containing words-sentences-mapping> -s <max_seq_length> -b <batch_size> -o <out_dir: mask/unmask + LM_model_version+ json_file> -v <LM_version> -g <use GPU or not>`
 - getting unmasked vectors:
