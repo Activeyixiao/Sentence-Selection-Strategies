@@ -40,7 +40,7 @@ After obtaining those sentence for each word, we could use pre-trained language 
 - [vocabulary list](https://cf-my.sharepoint.com/:t:/g/personal/wangy306_cardiff_ac_uk/EXg5FWbRhLVDlXrPAd0vwCUBNkMTiJGiSRTFQtaYtOycaA?e=ev3epd)
 - [wikipedia-file](https://doi.org/10.5281/zenodo.5570579)
 - [wikipedia-introduction-file](https://doi.org/10.5281/zenodo.5570561)
-- wikitionary-dataset: in this repo (all_wiktionary_onlynouns_most-freq-sense.csv)
+- wikitionary-dataset: in this repo ("all_wiktionary_onlynouns_most-freq-sense.csv")
 - [genericsKG-dataset](https://allenai.org/data/genericskb)
 - word-topic-document
 
