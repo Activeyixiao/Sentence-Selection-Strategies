@@ -43,7 +43,7 @@ After obtaining those sentence for each word, we could use pre-trained language 
 - [wikipedia_homepages](https://doi.org/10.5281/zenodo.5570854)
 - wikitionary-dataset: in this repo ("all_wiktionary_onlynouns_most-freq-sense.csv")
 - [genericsKG-dataset](https://allenai.org/data/genericskb)
-- word-topic-document
+- [word_topic(25)_sentences](https://doi.org/10.5281/zenodo.5570983)
 
 ##### obtaining sentences
 - selecting random sentences from wikipedia: 
