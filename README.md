@@ -45,7 +45,7 @@ After obtaining those sentence for each word, we could use pre-trained language 
 - [genericsKG-dataset](https://allenai.org/data/genericskb)
 - [word_topic(25)_sentences](https://doi.org/10.5281/zenodo.5570983)
 
-##### obtaining sentences
+##### Obtaining sentences
 - selecting random sentences from wikipedia: 
   - `python3 ./extract_sentence/get_sentences(random).py --words-file WORD_LIST --corpus-file SOURCE_FILE --intermiate-folder FOLDER_NAME --build-folder FOLDER_NAME --truncate TRUEorFALSE`
     - WORD_LIST: all_words.txt
