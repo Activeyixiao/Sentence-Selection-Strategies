@@ -103,9 +103,9 @@ if __name__ == '__main__':
     parser = ArgumentParser() 
     parser.add_argument('-w','--words-file', help='words file', required=True)
     parser.add_argument('-c','--corpus-file', help='corpus file', required=True) 
-    parser.add_argument('-t','--wiki-split', help='folder that store intermiate files ', required=True)
+    parser.add_argument('-t','--intermiate-folder', help='folder that store intermiate files ', required=True)
     parser.add_argument('-b','--build-folder', help='folder that store the output files', required=True)
-    parser.add_argument('-l','--use_length', help='retrict the token length of sentences', choices=['false', 'true'],required=True)
+    parser.add_argument('-l','--truncate', help='retrict the token length of sentences', choices=['false', 'true'],required=True)
 
     args = parser.parse_args()
 
@@ -122,12 +122,12 @@ if __name__ == '__main__':
     print('Source corpus has ',linecount,' lines')
 
     print('Splitting original corpus in ',workers,' files of ~',sents_per_split,' lines')
-    if not os.path.exists(args.wiki_split):
-      os.makedirs(args.wiki_split)
+    if not os.path.exists(args.intermiate_folder):
+      os.makedirs(args.intermiate_folder)
 
     linecount=0
     splitcount=0
-    outf=open(os.path.join(args.wiki_split,'split_'+str(splitcount))+'.txt','w')
+    outf=open(os.path.join(args.intermiate_folder,'split_'+str(splitcount))+'.txt','w')
     with open(args.corpus_file,'r') as f:
       for line in f:
           linecount+=1
@@ -135,7 +135,7 @@ if __name__ == '__main__':
           if linecount % sents_per_split == 0:
               outf.close()
               splitcount+=1
-              outf=open(os.path.join(args.wiki_split,'split_'+str(splitcount)+'.txt'),'w')
+              outf=open(os.path.join(args.intermiate_folder,'split_'+str(splitcount)+'.txt'),'w')
               print('Saved split numb: ',splitcount,' of ',workers)
 
 
@@ -151,7 +151,7 @@ if __name__ == '__main__':
     print('Loaded ',len(words_set),' words')
 
     # collect all splitted wikipedia text file
-    splits=[os.path.join(args.wiki_split,inf) for inf in os.listdir(args.wiki_split) 
+    splits=[os.path.join(args.intermiate_folder,inf) for inf in os.listdir(args.intermiate_folder) 
     if inf.startswith('split') 
     and inf.endswith('.txt') 
     and not 'triples' in inf]
@@ -166,12 +166,12 @@ if __name__ == '__main__':
 
     p = mp.Pool(processes=workers)
 
-    if args.use_length == 'true':
-        folder_10 = os.path.join(args.wiki_split,'10')
-        folder_20 = os.path.join(args.wiki_split,'20')
-        folder_30 = os.path.join(args.wiki_split,'30')
-        folder_40 = os.path.join(args.wiki_split,'40')
-        folder_55 = os.path.join(args.wiki_split,'55')
+    if args.truncate == 'true':
+        folder_10 = os.path.join(args.intermiate_folder,'10')
+        folder_20 = os.path.join(args.intermiate_folder,'20')
+        folder_30 = os.path.join(args.intermiate_folder,'30')
+        folder_40 = os.path.join(args.intermiate_folder,'40')
+        folder_55 = os.path.join(args.intermiate_folder,'55')
         os.makedirs(folder_10)
         os.makedirs(folder_20)
         os.makedirs(folder_30)
@@ -200,8 +200,8 @@ if __name__ == '__main__':
             json.dump(word2sent_selected,open(file_name,w))
        
 
-    if args.use_length == 'false':
-        folder_all = os.path.join(args.wiki_split,'all')
+    if args.truncate == 'false':
+        folder_all = os.path.join(args.intermiate_folder,'all')
         os.makedirs(folder_all)
         p.map(ctx,splits)
         p.close()
