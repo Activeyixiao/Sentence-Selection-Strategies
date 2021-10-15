@@ -47,17 +47,17 @@ After obtaining those sentence for each word, we could use pre-trained language 
 
 ##### obtaining sentences
 - selecting random sentences from wikipedia: 
-  - `python3 ./extract_sentence/get_sentences(random).py -w all_words.txt -c raw_data/wiki_page_file.txt -t wiki_split -b get_vector/sentences_collection -l true`
+  - `python3 ./extract_sentence/get_sentences(random).py --words-file WORD_LIST --corpus-file SOURCE_FILE --intermiate-folder FOLDER_NAME --build-folder FOLDER_NAME --truncate TRUE_OR_FALSE`
 - selecting sentences from introduction part of wikipedia
-  - `python3 ./extract_sentence/get_sentences(random).py -w all_words.txt -c raw_data/wiki_intro.txt -t wiki_split -b get_vector/sentences_collection -l false`
+  - `python3 ./extract_sentence/get_sentences(random).py --words-file WORD_LIST --corpus-file SOURCE_FILE --intermiate-folder FOLDER_NAME --build-folder FOLDER_NAME --truncate TRUE_OR_FALSE`
 - selecting sentences from wikitionary
-  - `python3 ./extract_sentence/get_sentences(def_generics).py -w all_words.txt -c raw_data/all_wiktionary_onlynouns_most-freq-sense.csv -s wikitionary -b ./get_vector/sentences_collection`
+  - `python3 ./extract_sentence/get_sentences(def_generics).py --words-file WORD_LIST --corpus-file SOURCE_FILE --source NAME_OF_SOURCE --build-folder FOLDER_NAME`
 - selecting sentences from GenericsKG
-  - `python3 ./extract_sentence/get_sentences(def_generics).py -w all_words.txt -c raw_data/GenericsKB.tsv -s generics -b ./get_vector/sentences_collection`
+  - `python3 ./extract_sentence/get_sentences(def_generics).py --words-file WORD_LIST --corpus-file SOURCE_FILE --source NAME_OF_SOURCE --build-folder FOLDER_NAME`
 - selecting sentences from wiki-homepage
-  - `python3 ./extract_sentence/get_sentences(wiki_homepage).py -w all_words.txt -c raw_data/wiki_page_structure -b ./get_vector/sentences_collection`
+  - `python3 ./extract_sentence/get_sentences(wiki_homepage).py --words-file WORD_LIST --corpus-file SOURCE_FILE --build-folder FOLDER_NAME`
 - selecting sentence using topic model (LDA)
-  - `python3 ./extract_sentence/get_sentences(topics).py -w all_words.txt -c raw_data/word_topic(25)_sentences -b ./get_vector/sentences_collection` 
+  - `python3 ./extract_sentence/get_sentences(topics).py --words-file WORD_LIST --corpus-file SOURCE_FILE --build-folder FOLDER_NAME` 
 - selecting sentences using PMI score of words co-occurrence
   - `python3 PMI_sentence.py`
 
