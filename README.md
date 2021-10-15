@@ -48,9 +48,9 @@ After obtaining those sentence for each word, we could use pre-trained language 
 ##### obtaining sentences
 - selecting random sentences from wikipedia: 
   - `python3 ./extract_sentence/get_sentences(random).py --words-file WORD_LIST --corpus-file SOURCE_FILE --intermiate-folder FOLDER_NAME --build-folder FOLDER_NAME --truncate TRUEorFALSE`
-  - WORD_LIST: all_words.txt
-  - SOURCE_FILE: wikipedia-file
-  - FOLDER_NAME(build-folder): get_vector/sentence_collection
+    - WORD_LIST: all_words.txt
+    - SOURCE_FILE: wikipedia-file
+    - FOLDER_NAME(build-folder): get_vector/sentence_collection
 - selecting sentences from introduction part of wikipedia
   - `python3 ./extract_sentence/get_sentences(random).py --words-file WORD_LIST --corpus-file SOURCE_FILE --intermiate-folder FOLDER_NAME --build-folder FOLDER_NAME --truncate TRUE_OR_FALSE`
   - SOURCE_FILE:wikipedia-introduction-file
