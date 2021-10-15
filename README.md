@@ -53,21 +53,21 @@ After obtaining those sentence for each word, we could use pre-trained language 
     - FOLDER_NAME(build-folder): get_vector/sentence_collection
 - selecting sentences from introduction part of wikipedia
   - `python3 ./extract_sentence/get_sentences(random).py --words-file WORD_LIST --corpus-file SOURCE_FILE --intermiate-folder FOLDER_NAME --build-folder FOLDER_NAME --truncate TRUE_OR_FALSE`
-  - SOURCE_FILE:wikipedia-introduction-file
+    - SOURCE_FILE:wikipedia-introduction-file
 - selecting sentences from wikitionary
   - `python3 ./extract_sentence/get_sentences(def_generics).py --words-file WORD_LIST --corpus-file SOURCE_FILE --source NAME_OF_SOURCE --build-folder FOLDER_NAME`
-  - SOURCE_FILE: data/all_wiktionary_onlynouns_most-freq-sense.csv
-  - NAME_OF_SOURCE: wikitionary
+    - SOURCE_FILE: data/all_wiktionary_onlynouns_most-freq-sense.csv
+    - NAME_OF_SOURCE: wikitionary
 - selecting sentences from GenericsKG
   - `python3 ./extract_sentence/get_sentences(def_generics).py --words-file WORD_LIST --corpus-file SOURCE_FILE --source NAME_OF_SOURCE --build-folder FOLDER_NAME`
-  - SOURCE_FILE: genericsKG-dataset
-  - NAME_OF_SOURCE: generics
+    - SOURCE_FILE: genericsKG-dataset
+    - NAME_OF_SOURCE: generics
 - selecting sentences from wiki-homepage
   - `python3 ./extract_sentence/get_sentences(wiki_homepage).py --words-file WORD_LIST --corpus-file SOURCE_FILE --build-folder FOLDER_NAME`
-  - SOURCE_FILE: wikipedia_homepages
+    - SOURCE_FILE: wikipedia_homepages
 - selecting sentence using topic model (LDA)
   - `python3 ./extract_sentence/get_sentences(topics).py --words-file WORD_LIST --corpus-file SOURCE_FILE --build-folder FOLDER_NAME` 
-  - SOURCE_FILE: word_topic(25)_sentences
+    - SOURCE_FILE: word_topic(25)_sentences
 - selecting sentences using PMI score of words co-occurrence
   - `python3 PMI_sentence.py`
 
