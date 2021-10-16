@@ -44,7 +44,7 @@ After obtaining those sentence for each word, we could use pre-trained language 
 - wikitionary-dataset: "data/all_wiktionary_onlynouns_most-freq-sense.csv"
 - [genericsKG-dataset](https://allenai.org/data/genericskb)
 - [word_topic(25)_sentences](https://doi.org/10.5281/zenodo.5570983)
-- [word_pair_sentences]
+- [word_pair_sentences](https://doi.org/10.5281/zenodo.5573754)
 
 ##### Obtaining sentences
 - selecting random sentences from wikipedia: 
