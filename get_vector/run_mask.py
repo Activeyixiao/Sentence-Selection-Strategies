@@ -90,9 +90,10 @@ def main(argv):
                 continue
             results = extract_mv_mask(token_ids, input_mask, indices,  batch_size, mask_model, usegpu=usegpu)  # 24 * num_sent * 1024
             sents_embedding = results[-1]
-            D_word_embedding[word] = sents_embedding
-            with open(os.path.join(output_dir+'/'+word),'wb') as outf:
-                 pickle.dump(D_word_embedding,outf)
+            torch.save(sents_embedding, os.path.join(output_dir,word+'.pt'))
+#             D_word_embedding[word] = sents_embedding
+#             with open(os.path.join(output_dir+'/'+word),'wb') as outf:
+#                  pickle.dump(D_word_embedding,outf)
         except: 
                 print('file exeption: ' + word)
                 logger.info('file exeption:' + word)  
