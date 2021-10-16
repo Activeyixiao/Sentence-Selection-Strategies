@@ -91,7 +91,7 @@ After obtaining those sentence for each word, we could use pre-trained language 
 ##### pendding vectors
 - for those words don't have enough (20 in our setting) sentence-vector from some source file （for example, some word only have around 6 sentence from wiki-homepage）, we pad missing vector with random sentence-vector of corresponding word.
 - likewise, if some source file don't have words required in vocabulary list (for example, GenericsKB only have 17035 words), we pad mssing vector with 20 random sentence-vectors of corresponding word:
-  - `python3 ./get_vector/padding_vectors -vector <name of json file in which vectors are saved> `
+  - `python3 ./get_vector/padding_vectors --padding-source <file/folder where padding vector are derived> --padding-target <file/folder where padding vector is needed> --build-folder <folder-name> `
   
 ### Vector evaluation
 - Evaluation task is semantic properties classification
