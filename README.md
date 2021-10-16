@@ -23,7 +23,7 @@ After obtaining those sentence for each word, we could use pre-trained language 
 - Python3
 - Numpy
 - Torch
-- pickle
+- Pickle
 - NLTK
 
 ### Preparing a vocabulary list
