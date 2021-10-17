@@ -51,13 +51,16 @@ if __name__ == '__main__':
 	for w in word_neighbor_sentences.keys():
 		all_sents = [s for s_ls in word_neighbor_sentences[w].values() for s in s_ls]
 		sampled_sent = set()
-		while len(word_neighbor_sent[w])<20 and len(all_sents)>20:
-			for k,vs in word_neighbor_sentences[w].items():
-				sent = random.sample(vs,1)[0]
-				sampled_sent.add(sent)
-				word_neighbor_sent[w].append(sent)
-				if len(word_neighbor_sent[w])>=20:
-					break
+		if len(all_sents)<=20:
+			word_neighbor_sent[w]=all_sents
+		else:
+			while len(word_neighbor_sent[w])<20:
+				for k,vs in word_neighbor_sentences[w].items():
+					sent = random.sample(vs,1)[0]
+					sampled_sent.add(sent)
+					word_neighbor_sent[w].append(sent)
+					if len(word_neighbor_sent[w])>=20:
+						break
 		w_count += 1
 		if w_count % 100==0:
 			print(w_count,'words has been processed')
