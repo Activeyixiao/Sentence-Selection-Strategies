@@ -62,7 +62,7 @@ if __name__ == '__main__':
     #     for w in word_ls:
     #         mask_embedding[w]=num_layers*[1]
     #     use_topic = True
-        
+    old_embeddings = pickle.load(open(args.embed_path,'rb'))    
     if args.vector_type != 'def':
         num_ls = [1,5,10,20]        
     else:
